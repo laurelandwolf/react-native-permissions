@@ -56,12 +56,11 @@ react-native link react-native-permissions
 
 #### Using manual linking
 
-1. In the XCode's "Project navigator", right click on your project's Libraries
-   folder ➜ `Add Files to <...>`
-2. Go to `node_modules` ➜ `react-native-permissions` ➜ select
-   `ReactNativePermissions.xcodeproj`
-3. Add `libReactNativePermissions.a` to `Build Phases` -> `Link Binary With
-   Libraries`
+1.  In the XCode's "Project navigator", right click on your project's Libraries
+    folder ➜ `Add Files to <...>`
+2.  Go to `node_modules` ➜ `react-native-permissions` ➜ select
+    `ReactNativePermissions.xcodeproj`
+3.  Add `libReactNativePermissions.a` to `Build Phases` -> `Link Binary With Libraries`
 
 ## Using
 
@@ -139,7 +138,7 @@ Promises resolve into one of these statuses:
 | Return value   | Notes                                                                                                                                                                                                                                                                  |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `authorized`   | User has authorized this permission                                                                                                                                                                                                                                    |
-| `denied`       | User has denied this permission at least once. On iOS this means that the user will not be prompted again. Android users can be prompted multiple times until they select 'Never ask me again'                                                                          |
+| `denied`       | User has denied this permission at least once. On iOS this means that the user will not be prompted again. Android users can be prompted multiple times until they select 'Never ask me again'                                                                         |
 | `restricted`   | **iOS** - this means user is not able to grant this permission, either because it's not supported by the device or because it has been blocked by parental controls. **Android** - this means that the user has selected 'Never ask me again' while denying permission |
 | `undetermined` | User has not yet been prompted with a permission dialog                                                                                                                                                                                                                |
 
@@ -212,8 +211,7 @@ Permissions.request('notification', { type: ['alert', 'badge'] }).then(
   will request. Open Xcode ➜ `Info.plist` ➜ Add a key (starting with "Privacy -
   ...") with your kit specific permission.
 
-Example: If you need Contacts permission you have to add the key `Privacy -
-Contacts Usage Description`.
+Example: If you need Contacts permission you have to add the key `Privacy - Contacts Usage Description`.
 
 <img width="338" alt="3cde3b44-7ffd-11e6-918b-63888e33f983" src="https://cloud.githubusercontent.com/assets/1440796/18713019/271be540-8011-11e6-87fb-c3828c172dfc.png">
 
@@ -246,6 +244,7 @@ So before submitting your app to the App Store, make sure that in your
 <key>NSMotionUsageDescription</key>
 <string>Some description</string>
 ```
+
 This is required because during the phase of processing in the App Store
 submission, the system detects that you app contains code to request the
 permission `X` but don't have the `UsageDescription` key and then it rejects the
